@@ -18,13 +18,15 @@ public class GmailCrawl {
         driver.get(url);
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.findElement(By.xpath("//input[@id='identifierId']")).sendKeys("feyselmubarek@gmail.com");
+        // Set your email here
+        driver.findElement(By.xpath("//input[@id='identifierId']")).sendKeys("#########@gmail.com");
         driver.findElement(By.id("identifierNext")).click();
 
         WebElement passwordField = driver.findElement(By.xpath("//input[@name='password']"));
         WebDriverWait wait = new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.elementToBeClickable(passwordField));
-        passwordField.sendKeys("fesyelfaya12");
+        // Set your password here
+        passwordField.sendKeys("#########");
         driver.findElement(By.id("passwordNext")).click();
 
         // The main purpose of this sleep is to enter verification raised by google or captcha
